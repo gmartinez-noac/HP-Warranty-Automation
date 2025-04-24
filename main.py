@@ -2,9 +2,11 @@ import re
 from playwright.sync_api import Playwright, sync_playwright, expect, TimeoutError
 import time
 
+# 
 def submit_serial(page, serial_number, close_popup=False):
     page.goto("https://support.hp.com/us-en/check-warranty")
 
+    # On the first 
     if close_popup:
         try:
             popup = page.get_by_role("button", name="Close", exact=True)
