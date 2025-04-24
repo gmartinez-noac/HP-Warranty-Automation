@@ -2,11 +2,11 @@ import re
 from playwright.sync_api import Playwright, sync_playwright, expect, TimeoutError
 import time
 
-# 
+# Opens a new tab and inputs serial number
 def submit_serial(page, serial_number, close_popup=False):
     page.goto("https://support.hp.com/us-en/check-warranty")
 
-    # On the first 
+    # On the first tab, a pop up will appear
     if close_popup:
         try:
             popup = page.get_by_role("button", name="Close", exact=True)
@@ -20,6 +20,8 @@ def submit_serial(page, serial_number, close_popup=False):
     serial_input.fill(serial_number)
     page.get_by_role("button", name="Submit").click()
 
+# In some cases, the serial number is not enough to verify warranty status
+# If so, a second textbox will appear asking for a product number
 def handle_product_number(page, product_number=None):
     try:
         product_input = page.get_by_placeholder("Example: 7NM78PA")
