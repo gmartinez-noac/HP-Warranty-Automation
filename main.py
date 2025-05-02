@@ -57,24 +57,27 @@ def run(playwright: Playwright) -> None:
     batch1 = [
         ("2MQ4510CMH", None),
         ("2MQ4510CZ6", None),
-        ("2MQ4510CZ7", None),
-        ("2MQ4510CYT", None)
+        ("2MQ4510J8H", None),
+        ("2MQ4510JCF", None),
+        ("2MQ4510JDH", None),
+        ("2MQ4510J79", None),
+        ("2MQ4510J88", None)
     ]
     
     run_batch(context1, batch1)
 
     # --------- Second Window ---------
-    context2 = browser.new_context()
-    batch2 = [
-        ("CND5140NW5", "8Z8L6AV"),
-        ("CND5140NW6", "8Z8L6AV"),
-        ("CND5140J0M", "8Z8L6AV"),
-        ("CND5140NW4", "8Z8L6AV"),
-        ("CND5140J0J", "8Z8L6AV"),
-        ("CND5140J0P", "8Z8L6AV")
-    ]
-    
-    run_batch(context2, batch2)
+    # context2 = browser.new_context()
+    # batch2 = [
+    #     ("CND5140NW5", "8Z8L6AV"),
+    #     ("CND5140NW6", "8Z8L6AV"),
+    #     ("CND5140J0M", "8Z8L6AV"),
+    #     ("CND5140NW4", "8Z8L6AV"),
+    #     ("CND5140J0J", "8Z8L6AV"),
+    #     ("CND5140J0P", "8Z8L6AV")
+    # ]
+    # 
+    # run_batch(context2, batch2)
 
 
 
